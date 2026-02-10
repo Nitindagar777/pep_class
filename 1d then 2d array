@@ -1,0 +1,27 @@
+
+// takes 9 element store in 1d then 2d array
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    int arr[9] = {2,4,7,8,3,6,3,6,8};
+    int r = 3, c = 3;
+
+    int arr2[r][c];
+
+    for(int i=0; i<r; i++){
+        for(int j=0; j<c; j++){
+            arr2[i][j] = arr[i * c + j];
+        }
+    }
+    for(int i=0; i<r; i++){
+        for(int j=0; j<c; j++){
+            cout << arr2[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
