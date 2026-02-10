@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void decimalToBinary(int num){
+    int res = 0;
+    int pow = 1;
+    while(num > 0){
+        int rem = num % 2;
+        res += rem * pow;
+        pow *= 10;
+        num /= 2;
+    }
+    cout << res;
+}
+void binaryToDecimal(int num){
+    int res = 0;
+    int pow = 1;
+    while(num > 0){
+        int rem = num % 10;
+        res += rem * pow;
+        pow *= 2;
+        num /= 10;
+    }
+    cout << res;
+}
+
+void rev(int num){
+    int res = 0;
+    while(num > 0){
+        int rem = num % 10;
+        res = res * 10 + rem;
+        num /= 10;
+    }
+    cout << res;
+}
+
+int main(){
+
+    int num;
+    cin >> num;
+    // decimalToBinary(num);
+    // binaryToDecimal(num);
+    rev(num);
+
+    return 0;
+}
+
+
+
