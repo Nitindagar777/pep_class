@@ -1,0 +1,44 @@
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+    vector<int>ans;
+        
+    int srow = 0, erow = matrix.size() - 1;
+    int scol = 0, ecol = matrix[0].size() - 1;
+
+    while (srow <= erow && scol <= ecol) {
+        // Traverse from left to right
+        for (int i = scol; i <= ecol; ++i) {
+            // cout << matrix[srow][i] << " ";
+            ans.push_back(matrix[srow][i]);
+        }
+        ++srow;
+
+        // Traverse from top to bottom
+        for (int i = srow; i <= erow; ++i) {
+            // cout << matrix[i][ecol] << " ";
+            ans.push_back(matrix[i][ecol]);
+        }
+        --ecol;
+
+        if (srow <= erow) {
+            // Traverse from right to left
+            for (int i = ecol; i >= scol; --i) {
+                // cout << matrix[erow][i] << " ";
+                ans.push_back(matrix[erow][i]);
+            }
+            --erow;
+        }
+
+        if (scol <= ecol) {
+            // Traverse from bottom to top
+            for (int i = erow; i >= srow; --i) {
+                // cout << matrix[i][scol] << " ";
+                ans.push_back(matrix[i][scol]);
+            }
+            ++scol;
+        }
+    }
+    return ans;
+    }
+};
