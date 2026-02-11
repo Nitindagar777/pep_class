@@ -1,0 +1,48 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+void checkOddOrEven(int n){
+    if(n & 1){
+        cout << "Odd";
+    }else{
+        cout << "even";
+    }
+}
+
+void getithbit(int n, int i){
+    if(n & (1 << i)){
+        cout << "bit is 1.";
+    }else{
+        cout << "bit is 0";
+    }
+}
+
+int setithbit(int n, int i){
+    return (n | (1 << i));
+}
+
+int clearithbit(int n, int i){
+    return (n & ~(1 << i));
+}
+
+int updateithbit(int n, int i){
+    // 1. clear  (n & ~(1 << i))
+    // 2. set    (n | (1 << i))
+}
+
+int clearlastithbit(int n, int i){
+    return (n & (-1 << i)); // ~0 = -1
+}
+
+int main(){
+
+    // int n = 6;
+    // checkOddOrEven(n);
+    // getithbit(5, 1);
+    // cout << setithbit(5,1);
+    // cout << clearithbit(5,0);
+    // cout << clearlastithbit(7, 1);
+
+
+    return 0;
+}
