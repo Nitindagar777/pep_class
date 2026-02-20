@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void pushBottom(stack<int> &st, int x) {
+    // Base case: stack empty
+    if (st.empty()) {
+        st.push(x);
+        return;
+    }
+
+    // Remove top
+    int top = st.top();
+    st.pop();
+
+    // Recursive call
+    pushBottom(st, x);
+
+    // Put back removed element
+    st.push(top);
+}
+
+int main() {
+    stack<int> st;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+
+    pushBottom(st, 10);
+
+    // Print stack (top to bottom)
+    while (!st.empty()) {
+        cout << st.top() << " ";
+        st.pop();
+    }
+}
