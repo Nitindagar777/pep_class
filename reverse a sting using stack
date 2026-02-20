@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s = "hello";
+    stack<char> st;
+
+    // Push all characters
+    for(char c : s) {
+        st.push(c);
+    }
+
+    // Pop back into string
+    for(int i = 0; i < s.length(); i++) {
+        s[i] = st.top();
+        st.pop();
+    }
+
+    cout << s;
+}
